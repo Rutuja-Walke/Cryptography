@@ -5,20 +5,40 @@ using namespace std;
 vector<char> alpha = {'a','b','c','d','e','f','g','h','i','j','k','l','m',
                     'n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
+vector<char> uaplha = {'A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R',
+                        'S','T','U','V','W','X','Y','Z'};
+
  void encrypt(string str, int key)
 {
      for(int i=0;i<str.length();i++)
     {
-        int index = str[i] + key;
-        index = index % 97;
-
-        if(index > 25)
+        if(islower(str[i]))
         {
-            index = index%26;
+            int index = str[i] + key;
+            index = index % 97;
+
+            if(index > 25)
+            {
+                index = index % 26;
+            }
+
+            cout<<alpha[index];
         }
 
-        cout<<alpha[index];
+        else
+        {
+            int index = str[i] + key;
+            index = index % 65;
+
+               if(index > 25)
+            {
+                index = index%26;
+            }
+
+            cout<<uaplha[index];            
+        }
     }
+    
 }
 
 int main()
