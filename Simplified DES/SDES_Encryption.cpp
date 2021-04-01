@@ -1,3 +1,10 @@
+/*==========================================
+ Title:  Simplified DES Encryption
+ Author: Rutuja Sunil Walke
+ Date:   1 April 2021
+========================================== */
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
