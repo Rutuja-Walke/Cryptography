@@ -1,0 +1,54 @@
+STEPS AND EXAMPLE.
+
+1. Select primes: p=17 & q=11
+2. Compute n = pq =17×11=187
+3. Compute ø(n)=(p–1)(q-1)=16×10=160
+4. Select e : gcd(e,160)=1; choose e=7
+5. Determine d: de=1 mod 160 and d < 160 Value is d=23 since 23×7=161= 10×160+1
+6. Publish public key KU={7,187}
+7. Keep secret private key KR={23,17,11}
+
+
+**** MULTIPLICATIVE INVERSE ****
+(use Inverse Euclidean Algorithm)
+
+160=7*22+6
+7=6*1+1
+1=7*1-6*1
+    =7*1-160*1+7*22
+    = 7*23-160*1
+
+
+sample RSA encryption/decryption is:   
+given message M = 88 (nb. 88<187)
+encryption:
+C = 887 mod 187 = 11
+88^2 mod 187=7744 mod 187= 77
+88^4 mod  187= (88^2)^2 mod 187=77^2=5929-5797=132
+88^6 mod 187= 88^4 *88^2=132*77 mod 187
+= (10164-10098) mod 187= 66
+
+
+Rather than having to laborious repeatedly multiply, 
+can use the "square and multiply" algorithm with modulo reductions to implement all exponentiations quickly and efficiently
+
+88^7 mod 187 =88^6*88^1 mod 187
+                        = 66 *88 mod 187
+                        = 5808-5797
+  Cipher Text   =11
+
+
+
+DECRYTPION:
+M = 1123 mod 187 = 88 
+
+C=M^e mod  N
+M= C^d mod N
+M= 11^23 mod 187
+11 ^4 mod 187= 55
+11^8 mod 187= 33
+11^16 mod 187= 33*33 mod 187 =1089-935 mod 187=154
+11^23 mod 187=88 
+
+
+
