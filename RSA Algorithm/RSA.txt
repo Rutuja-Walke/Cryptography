@@ -1,4 +1,4 @@
-STEPS AND EXAMPLE.
+# STEPS AND EXAMPLE.
 
 1. Select primes: p=17 & q=11
 2. Compute n = pq =17×11=187
@@ -9,7 +9,7 @@ STEPS AND EXAMPLE.
 7. Keep secret private key KR={23,17,11}
 
 
-**** MULTIPLICATIVE INVERSE ****
+## **** MULTIPLICATIVE INVERSE ****
 (use Inverse Euclidean Algorithm)
 
 160=7*22+6
@@ -21,7 +21,8 @@ STEPS AND EXAMPLE.
 
 sample RSA encryption/decryption is:   
 given message M = 88 (nb. 88<187)
-encryption:
+
+## encryption:
 C = 887 mod 187 = 11
 88^2 mod 187=7744 mod 187= 77
 88^4 mod  187= (88^2)^2 mod 187=77^2=5929-5797=132
@@ -38,8 +39,7 @@ can use the "square and multiply" algorithm with modulo reductions to implement 
   Cipher Text   =11
 
 
-
-DECRYTPION:
+## DECRYTPION:
 M = 1123 mod 187 = 88 
 
 C=M^e mod  N
